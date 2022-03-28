@@ -115,6 +115,7 @@ func (c *Client) Connect(opts *Options) *Client {
 	if opts.User != "" || opts.Pass != "" {
 		connOpts = append(connOpts, stomp.ConnOpt.Login(opts.User, opts.Pass))
 	}
+	connOpts = append(connOpts, stomp.ConnOpt.Host("/"))
 	for k, v := range opts.Headers {
 		connOpts = append(connOpts, stomp.ConnOpt.Header(k, v))
 	}
