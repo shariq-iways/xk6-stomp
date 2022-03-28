@@ -28,7 +28,7 @@ Then:
 1. Start a [Stomp server](https://stomp.github.io/implementations.html#STOMP_Servers) (ActiveMQ, RabbitMQ, etc)
 
 ```shell
-docker run -p 8161:8161 -p 61613:61613 rmohr/activemq
+docker run -d -e RABBITMQ_NODENAME=my-rabbit --name rabbitmq -p 8080:15672 -p 61613:61613 resilva87/docker-rabbitmq-stomp
 ```
 
 2. Write the test code
